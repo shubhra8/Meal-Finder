@@ -1,4 +1,10 @@
-App will help users find a meal to cook based on option chosen: breakfast, lunch, dinner meal finder snip
+App will help users find a meal to cook based on option chosen: breakfast, lunch, dinner meal finder snip.
+
+###
+Javascript,HTML/CSS
+
+
+###
 API Used-Edamam API,youtube Api,custom google API
 
 ![image](https://user-images.githubusercontent.com/57454930/174458683-fe5a1ccc-8d54-4ddf-888b-aeb0f24beda9.png)
