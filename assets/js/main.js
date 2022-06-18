@@ -172,28 +172,14 @@ previous1.addEventListener("click", function() {
     lunch()
   }
 })
-  //for(i=0;i<=b-1;i++){
-//var recipe1=document.createElement('p');
-//recipe.appendChild(recipe1);
- //recipe1.innerHTML=data.items[i].htmlTitle;
-
-  //}
- //youtubeAPI;
- //});
-var meal = "fish-tacos"; //sample meal name 
 
 
-//get actual value of "meal" from google search/recipe?
-displayVideo(meal);
+var ytApiKey = 'AIzaSyAsBXKaD9_eZFOU47VxHRgamxC7SBp-uU0';
 
 function displayVideo(meal) {
-//youtube api
 var mealName = meal; 
-
 var recipeVidTitleEl = $(".recipeVidTitle");
 var recipeVidFrameEl = $(".recipeVidFrame");
-
-var ytApiKey = "AIzaSyD4MIilTmWgkRGpkukDcnqegu0wJP1Q-Qk";
 var searchLink = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=' + mealName + '&key=' + ytApiKey;
 
 fetch(searchLink)
@@ -201,18 +187,33 @@ fetch(searchLink)
     return response.json();
   })
   .then(function (data) {
-    // console.log('Raw data from search results');
-    // console.log("data: ");
-    // console.log(data);
-    // console.log('Individual search result items:');
-    // console.log("data.item: ");
-    // console.log(data.items);
     recipeVidTitleEl.text(data.items[0].snippet.title);
     var videoLink = "https://www.youtube.com/embed/" + data.items[0].id.videoId;
     recipeVidFrameEl.attr("src",videoLink);
+    displayDescription(data.items[0].id.videoId);
   });
 };
- 
+
+
+function displayDescription(vidId) {
+  var videoId = vidId;
+  var videoDescriptEl = $('.videoDescript');
+  var descriptSearch = 'https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=' + videoId + '&key=' + ytApiKey;
+
+  fetch (descriptSearch)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log("data: ");
+    console.log(data);
+    console.log(data.items[0].snippet.description);
+    videoDescriptEl.text(data.items[0].snippet.description);
+  });
+};
+
+
+
 
 
 
