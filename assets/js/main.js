@@ -2,6 +2,8 @@ let recipe=document.getElementById("recipe");
 let next1=document.getElementById("next1");
 let previous1=document.getElementById("previous1");
 var option=localStorage.getItem("choice");
+var cusinetype=localStorage.getItem("CusineType");
+var healthprefer=localStorage.getItem("Healthpreference");
 let img=document.getElementById("image1");
 let recipedetail=document.getElementById("recipedetail");
 let mealname=document.getElementById("mealname");
@@ -13,9 +15,9 @@ console.log(option);
 //edamam Api fetch
 let googleapi='AIzaSyAokFh6lKdcKUYeUx-39ZeqJAHVwyocZmk';
 let apiCall='https://www.googleapis.com/customsearch/v1?key=AIzaSyAokFh6lKdcKUYeUx-39ZeqJAHVwyocZmk&cx=0376c30bf308d4095&q=breakfastrecipe';
-let apiCall0='https://api.edamam.com/api/recipes/v2?app_id=a548ca0c&app_key=21bfdc6a49ab9438451159297881e944&q=dinner%rolls%rice&type=public&mealType=Dinner'
-let apiCall1="https://api.edamam.com/api/recipes/v2?app_id=a548ca0c&app_key=21bfdc6a49ab9438451159297881e944&q=breakfast recipe&type=public&mealType=Breakfast";
-let apiCall2="https://api.edamam.com/api/recipes/v2?app_id=a548ca0c&app_key=21bfdc6a49ab9438451159297881e944&q=lunch%soup%rice&type=public&mealType=lunch";
+let apiCall0='https://api.edamam.com/api/recipes/v2?app_id=a548ca0c&app_key=21bfdc6a49ab9438451159297881e944&q=Dinner&type=public&cuisineType='+cusinetype+'&health='+healthprefer;
+let apiCall1="https://api.edamam.com/api/recipes/v2?app_id=a548ca0c&app_key=21bfdc6a49ab9438451159297881e944&q=breakfast&type=public&cuisineType="+cusinetype+'&health='+healthprefer;
+let apiCall2="https://api.edamam.com/api/recipes/v2?app_id=a548ca0c&app_key=21bfdc6a49ab9438451159297881e944&q=lunch&type=public&cuisineType="+cusinetype+'&health='+healthprefer;
 let i=0;
 console.log(i);
 if(option==="Dinner"){

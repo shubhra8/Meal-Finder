@@ -10,9 +10,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Poppins:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <title>Meal Finder</title>
   <link rel="icon" type="image/x-icon" href="./assets/images/icons8-ingredients-48.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -46,14 +48,47 @@
           and it’ll show you step by step instructions with links to videos provided.
             </p>
           
-            <div>
+            <div id="MealChoose">
               <h4>Find your Meal</h4>
               <button id="btnBreakfast">Breakfast</button> 
               <button id="btnLunch">Lunch</button>
               <button id="btnDinner">Dinner</button>
+
+            <h4 id="prefer">Enter Your Prefrences</h4>
+              <div class="container">
+              <div id="health"class="dropdown"> 
+                <label for="lang">Health Prefrences</label>
+                <select id="mySelect" name="Health Prefrences">
+                  <option value="alcohol-free">alcohol-free</option>
+                  <option value="dairy-free">dairy-free</option>
+                  <option value="egg-free">egg-free</option>
+                  <option value="fish-free">fish-free</option>
+                </select>
+
+                 </div>
+            <br>
+              <div id="Cusinetype" class="dropdown">
+                <label for="lang">Cusine Type</label>
+                <select id="mySelect2" name="Cusine type">
+                  <option value="American">American</option>
+                  <option value="Asian">Asian</option>
+                  <option value="Chinese">Chinese</option>
+                  <option value="French">French</option>
+                  <option value="Indian">Indian</option>
+                </select>
+              </div>
+            </div>
+            <br>
+            <button id="Submitall">Submit</button>
+              <br>
+              <h4>Check Nutrition Benefit/Enter Food Name</h4>
+              <input id="FoodName" type="text" placeholder="Enter Your Food Name"/>
+              <button id="foodEnter">Submit</button>
+
           </aside>
+        
         </div>
-      </div>
+      
     
          <!--start of carousel--->
          <div class="carousel-wrapper">
@@ -78,12 +113,7 @@
           </div>
     <!---end of carousel-->
 
-    <div>
-    <img class="icons" id="map" src="./assets/images/map.png">
-    <img class="icons" id="cutlery" src="./assets/images/pieces-of-cutlery.png">
-    <img class="icons" id="recipe" src="./assets/images/recipe.png">
-    </div>
-      </div>
+   
 
     <!---featured meals--->
     <div>
@@ -112,7 +142,7 @@
          
 <!---links
  <script src="./assets/js/main.js"> </script>-->
-   
+  
     <script src="./assets/js/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
