@@ -14,4 +14,3 @@ AS A consumer who is looking for their next meal I WANT to generate meal ideas S
 
 GitHub Repo -> https://github.com/shubhra8/Meal-Finder
 GitHub Page --> https://shubhra8.github.io/Meal-Finder/
-
